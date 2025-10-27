@@ -1,4 +1,6 @@
 <?php
-  echo "<h1>Hola desde PHP</h1>";
-  phpinfo();
+echo "<h1>Hola, David Santa</h1>";
+echo "<p>Si</p>";
+
+phpinfo();
 ?>

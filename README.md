@@ -1,12 +1,18 @@
-# Taller Vagrant + Provisionamiento con Shell
+Parte web del taller:
 
-## Pasos
-1. Clonar este repositorio.
-2. Ejecutar `vagrant up` para levantar las máquinas.
-3. Acceder a la máquina web en: http://192.168.56.10
-4. Verificar `index.html` y `info.php`.
+Se creó la máquina virtual web con Vagrant usando la IP 192.168.56.10
+Se utilizó el script provision-web.sh para instalar automáticamente Apache y **PHP dentro de la máquina
 
-## Reto
-- Completar `provision-db.sh` para instalar PostgreSQL.
-- Crear una base de datos y tabla.
-- Conectar la página PHP a la base de datos y mostrar datos.
+En la carpeta www/ del proyecto se encuentran los archivos del sitio:
+- **index.html**
+que modifiqué con sudo nano /var/www/html/index.html cambiar el contenido original por una pagina con mi nombre y la palabra "sopas"
+- **info.php** 
+Con un script en PHP que muestra un mensaje y la información del servidor
+Ahora, modificandolo con **sudo nano /var/www/html/info.php** cambié el mensaje inicial para que mostrara mi nombre y la palabra "si" juntos con la informacion del servidor
+
+Luego se ejecutó el comando `vagrant provision web`, lo que copió los archivos al directorio `/var/www/html/` de la máquina web
+
+- Al acceder desde el navegador a **http://192.168.56.10/**, se mostró correctamente la página HTML con el mensaje de bienvenida
+- Al acceder a **http://192.168.56.10/info.php**, se visualizó la página de PHP con el mensaje dinámico y la información del entorno PHP
+
+
